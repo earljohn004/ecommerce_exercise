@@ -17,7 +17,7 @@ For each product a list of orders are stored. Each order is composed of:
 	* Fast delivery orders have to be printed in descending order of price;
 	* Normal delivery orders have to be printed in ascending order of price.
 
-	```c++
+```c++
 	class Order_Base {
 		public:
 		/*
@@ -47,7 +47,7 @@ For each product a list of orders are stored. Each order is composed of:
 		*/
 		virtual void print() = 0;
 	};
-	```
+```
 
 ## Information on other github repos used in current project
 - https://github.com/earljohn004/cppgenericmakefile		= folder structure and Makefile
