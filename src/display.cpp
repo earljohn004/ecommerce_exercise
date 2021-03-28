@@ -26,6 +26,14 @@ Display::~Display()
 {
 }
 
+/* ----------------------------------------------------------
+* Description: 
+*	Displays the main menu terminal GUI
+*
+* Parameters:
+* Return: void 
+*
+* ----------------------------------------------------------*/
 void Display::create_main_menu()
 {
 	std::cout <<  "Simple E-Commerce Order Application" << std::endl;
@@ -38,11 +46,32 @@ void Display::create_main_menu()
 	std::cout <<  "Input key:  ";
 }
 
+/* ----------------------------------------------------------
+* Description: 
+*	Clears the contents of the terminal
+*
+* Parameters:
+* Return: void 
+*
+* ----------------------------------------------------------*/
 void Display::clear_screen()
 {
 	std::cout << "\033[2J\033[1;1H";
 }
 
+/* ----------------------------------------------------------
+* Description: 
+*	Transition logic
+*	Press 1 will show add order screen
+*	Press 2 will show remove order screen
+*	Press 3 will show all orders
+*
+* Parameters:
+*	Order order
+*	input -> const char
+* Return: void 
+*
+* ----------------------------------------------------------*/
 void Display::transition( Order *order, const char &input )
 {
 	switch(input){
@@ -62,6 +91,15 @@ void Display::transition( Order *order, const char &input )
 	}
 }
 
+/* ----------------------------------------------------------
+* Description: 
+*	Displays the add order terminal GUI
+*
+* Parameters:
+*	Order *order
+* Return: void 
+*
+* ----------------------------------------------------------*/
 void Display::show_add_screen(Order *order)
 {
 	int ret = static_cast<int>(Retcode::ret_ok);
@@ -104,7 +142,15 @@ void Display::show_add_screen(Order *order)
 	clear_screen();
 }
 
-
+/* ----------------------------------------------------------
+* Description: 
+*	Displays the remove order terminal GUI
+*
+* Parameters:
+*	Order *order
+* Return: void 
+*
+* ----------------------------------------------------------*/
 void Display::show_remove_screen(Order *order)
 {
 	int ret = static_cast<int>(Retcode::ret_ok);
@@ -126,6 +172,15 @@ void Display::show_remove_screen(Order *order)
 	}else { /* Do nothing */ }
 }
 
+/* ----------------------------------------------------------
+* Description: 
+*	Displays all orders terminal GUI
+*
+* Parameters:
+*	Order *order
+* Return: void 
+*
+* ----------------------------------------------------------*/
 void Display::show_display_screen(Order *order)
 {
 	clear_screen();
@@ -133,6 +188,14 @@ void Display::show_display_screen(Order *order)
 	pause_terminal();
 }
 
+/* ----------------------------------------------------------
+* Description: 
+*	Pauses terminal input
+*
+* Parameters:
+* Return: void 
+*
+* ----------------------------------------------------------*/
 void Display::pause_terminal()
 {
 	std::cin.ignore().get();

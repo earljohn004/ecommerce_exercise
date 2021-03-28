@@ -42,7 +42,7 @@ int main( int argc, char *argv[])
 
 	// Check if executable has one parameter
 	// Assumption of a comma separated value as parameter
-	// When no parameter is inputted, program starts with blank value
+	// When no parameter is inputted, program starts with blank list
 	if( argc > 1 ){
 		//Load file contents into order object
 		std::string parameter_str(argv[1]);
@@ -105,7 +105,11 @@ int main( int argc, char *argv[])
  * To perform unit tests below, Please uncomment -DTEST_MODE in Makefile
  */
 #ifdef TEST_MODE
-
+/* ----------------------------------------------------------
+* Description: 
+*	Performs unit testing for the order->addOrder function
+*
+* ----------------------------------------------------------*/
 TEST( order_add_items )
 {
 	MESSAGE_LOG("------------------------");
@@ -128,6 +132,11 @@ TEST( order_add_items )
 	MESSAGE_LOG("------------------------");
 }
 
+/* ----------------------------------------------------------
+* Description: 
+*	Performs unit testing for the order->removeOrder function
+*
+* ----------------------------------------------------------*/
 TEST ( order_remove_items)
 {
 	MESSAGE_LOG("------------------------");
@@ -162,6 +171,11 @@ TEST ( order_remove_items)
 	MESSAGE_LOG("------------------------");
 }
 
+/* ----------------------------------------------------------
+* Description: 
+*	Performs unit testing for the combination of order->addOrder and  order->removeOrder function
+*
+* ----------------------------------------------------------*/
 TEST ( order_adding_new_after_removing )
 {
 	MESSAGE_LOG("------------------------");
@@ -195,6 +209,12 @@ TEST ( order_adding_new_after_removing )
 	MESSAGE_LOG("------------------------");
 }
 
+/* ----------------------------------------------------------
+* Description: 
+*	Performs unit testing for the testing of duplicates when adding 
+*	not unique order id
+*
+* ----------------------------------------------------------*/
 TEST ( order_check_duplicates )
 {
 	MESSAGE_LOG("------------------------");

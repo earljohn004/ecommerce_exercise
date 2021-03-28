@@ -20,9 +20,41 @@ class Items{
 		Items( const std::string str_product_id, const std::string str_order_id, const int i_delivery_type, const double d_price );
 		~Items();
 
+		/* ----------------------------------------------------------
+		* Description: 
+		*	Returns the product_id
+		*
+		* Parameters:
+		* Return: auto 
+		*
+		* ----------------------------------------------------------*/
 		auto get_product_id() const { return str_product_id_;}
+		/* ----------------------------------------------------------
+		* Description: 
+		*	Returns the orderid
+		*
+		* Parameters:
+		* Return: auto 
+		*
+		* ----------------------------------------------------------*/
 		auto get_order_id() const { return str_order_id_;}
+		/* ----------------------------------------------------------
+		* Description: 
+		*	Returns the delivery type
+		*
+		* Parameters:
+		* Return: auto 
+		*
+		* ----------------------------------------------------------*/
 		auto get_delivery_type() const { return i_delivery_type_ ;}
+		/* ----------------------------------------------------------
+		* Description: 
+		*	Returns the price
+		*
+		* Parameters:
+		* Return: auto 
+		*
+		* ----------------------------------------------------------*/
 		auto get_price() const { return d_price_; }
 
 	private:
