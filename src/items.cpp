@@ -2,7 +2,7 @@
 * ---------------------------------------------------------
 * Ecommerce Application Amarula Excercise
 *
-* Copyright 2021 
+* March 2021 
 *
 * author:	Earl John Abaquita <earl.abaquita@outlook.com>
 * ----------------------------------------------------------
@@ -28,24 +28,4 @@ Items::Items( const std::string str_product_id, const std::string str_order_id, 
 
 Items::~Items()
 {
-}
-
-std::string Items::get_product_id()
-{
-	return str_product_id_;
-}
-
-std::string Items::get_order_id()
-{
-	return str_order_id_;
-}
-
-int Items::get_delivery_type()
-{
-	return i_delivery_type_;
-}
-
-double Items::get_price()
-{
-	return d_price_;
 }

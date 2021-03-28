@@ -2,7 +2,7 @@
 * ---------------------------------------------------------
 * Ecommerce Application Amarula Excercise
 *
-* Copyright 2021 
+* March 2021 
 *
 * author:	Earl John Abaquita <earl.abaquita@outlook.com>
 * ----------------------------------------------------------
@@ -20,19 +20,26 @@
 #endif
 
 #ifndef TEST_MODE
-int main(){
-
+int main( int argc, char* argv[])
+{
 	return static_cast<int>(Retcode::ret_ok);
 }
 #endif
 #ifdef TEST_MODE
 
-TEST( order_add_items ){
+TEST( order_add_items )
+{
 	Order* order = new Order();
-	ASSERT_EQUAL( static_cast<int>(Retcode::ret_ok) , order->addOrder("test1","test2",static_cast<int>(Value_delivery::normal),10.50));
-	ASSERT_EQUAL( static_cast<int>(Retcode::ret_ok) , order->addOrder("test3","test4",static_cast<int>(Value_delivery::fast),15.00));
-	ASSERT_EQUAL( static_cast<int>(Retcode::ret_ok) , order->addOrder("test5","test6",static_cast<int>(Value_delivery::normal),15.00));
-	ASSERT_EQUAL( static_cast<int>(Retcode::ret_ok) , order->addOrder("test7","test8",static_cast<int>(Value_delivery::fast),15.00));
+	ASSERT_EQUAL( static_cast<int>(Retcode::ret_ok) , order->addOrder("television","LG11",static_cast<int>(Value_delivery::fast),20));
+	ASSERT_EQUAL( static_cast<int>(Retcode::ret_ok) , order->addOrder("computer","asus2",static_cast<int>(Value_delivery::fast),8));
+	ASSERT_EQUAL( static_cast<int>(Retcode::ret_ok) , order->addOrder("computer","asus11",static_cast<int>(Value_delivery::normal),1));
+	ASSERT_EQUAL( static_cast<int>(Retcode::ret_ok) , order->addOrder("computer","asus4",static_cast<int>(Value_delivery::fast),9));
+	ASSERT_EQUAL( static_cast<int>(Retcode::ret_ok) , order->addOrder("television","LG1",static_cast<int>(Value_delivery::fast),5));
+	ASSERT_EQUAL( static_cast<int>(Retcode::ret_ok) , order->addOrder("computer","asus1",static_cast<int>(Value_delivery::normal),10));
+	ASSERT_EQUAL( static_cast<int>(Retcode::ret_ok) , order->addOrder("television","LG2",static_cast<int>(Value_delivery::fast),4));
+	ASSERT_EQUAL( static_cast<int>(Retcode::ret_ok) , order->addOrder("computer","asus4",static_cast<int>(Value_delivery::normal),15));
+	ASSERT_EQUAL( static_cast<int>(Retcode::ret_ok) , order->addOrder("computer","asus5",static_cast<int>(Value_delivery::normal),11));
+	ASSERT_EQUAL( static_cast<int>(Retcode::ret_ok) , order->addOrder("television","LG12",static_cast<int>(Value_delivery::fast),3));
 	order->print();
 }
 

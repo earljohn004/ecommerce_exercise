@@ -2,7 +2,7 @@
 * ---------------------------------------------------------
 * Ecommerce Application Amarula Excercise
 *
-* Copyright 2021 
+* March 2021 
 *
 * author:	Earl John Abaquita <earl.abaquita@outlook.com>
 * ----------------------------------------------------------

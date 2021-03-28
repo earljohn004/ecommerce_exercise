@@ -1,3 +1,12 @@
+/*
+* ---------------------------------------------------------
+* Ecommerce Application Amarula Excercise
+*
+* March 2021 
+*
+* author:	Earl John Abaquita <earl.abaquita@outlook.com>
+* ----------------------------------------------------------
+*/
 #ifndef _INC_COMMON_DEBUG_H_
 #define _INC_COMMON_DEBUG_H_
 
