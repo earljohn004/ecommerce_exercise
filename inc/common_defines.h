@@ -10,6 +10,9 @@
 #ifndef _H_COMMON_DEFINES_H
 #define _H_COMMON_DEFINES_H
 
+#define DEF_QUIT_KEY 'q'
+#define DEF_DELIVERY_MAX 2
+
 enum class Retcode : int 
 {
 	ret_ng = -1,

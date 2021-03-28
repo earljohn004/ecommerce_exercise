@@ -26,6 +26,7 @@ class Order : public Order_Base {
 		int addOrder(const std::string &productId, const std::string &orderId, int deliveryType, double price);
 		int removeOrder(const std::string &productId, const std::string &orderId);
 		void print();
+		int check_duplicates( const std::string &productId, const std::string &orderId);
 
 	private:
 		int push_item(Items *item);

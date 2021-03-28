@@ -39,7 +39,7 @@ CFLAGS   =	-Wall\
    			-g\
 			-I$(INCDIR)/ \
 			-DDEBUG_TOOL \
-			-DTEST_MODE
+			#-DTEST_MODE
 
 
 # linking flags here
