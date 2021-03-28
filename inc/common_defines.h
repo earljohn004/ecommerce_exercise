@@ -11,6 +11,7 @@
 #define _H_COMMON_DEFINES_H
 
 #define DEF_QUIT_KEY 'q'
+#define DEF_COMMA_SEP ','
 #define DEF_DELIVERY_MAX 2
 
 enum class Retcode : int 

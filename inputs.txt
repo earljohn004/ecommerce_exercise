@@ -1,0 +1,10 @@
+television,tv1,tv,tv
+television,tv2,0,1212.45
+computer,asus1,1,45234.56
+computer,asus2,1,55233.98
+computer,lenovo1,1,32000
+mobile phone,iphone1,0,2345
+mobile phone,iphone12,0,22233
+instrument,korg,0,23456.23
+instrument,yamaha,1,22234.12
+instrument,roland,0,22234.12

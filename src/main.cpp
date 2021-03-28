@@ -10,10 +10,14 @@
 *	Contains the main function
 *	Also contains the unit test macro
 *	To perform unit tests below, Please uncomment -DTEST_MODE in Makefile
+*	Program can load an existing input file as an input parameter
+*	bin/ECommerce_Exercise inputs.txt
 * ----------------------------------------------------------
 */
 #include <iostream>
+#include <fstream>
 #include <string>
+#include <sstream>
 #include "common_debug.h"
 #include "common_defines.h"
 
@@ -26,7 +30,7 @@
 #endif
 
 #ifndef TEST_MODE
-int main( int argc, char* argv[])
+int main( int argc, char *argv[])
 {
 	char input;
 	bool quitkey_pressed = false;
@@ -35,6 +39,50 @@ int main( int argc, char* argv[])
 
 	//Initialize the terminal, clear screen
 	display->clear_screen();
+
+	// Check if executable has one parameter
+	// Assumption of a comma separated value as parameter
+	// When no parameter is inputted, program starts with blank value
+	if( argc > 1 ){
+		//Load file contents into order object
+		std::string parameter_str(argv[1]);
+		std::ifstream file(parameter_str);
+		std::string line_str;
+		int ret = static_cast<int>(Retcode::ret_ok);
+
+		while( std::getline(file,line_str) ){
+			std::stringstream ss(line_str);
+
+			std::string product_id;
+			std::string order_id;
+			std::string delivery_type;
+			std::string price;
+
+			std::getline(ss,product_id, DEF_COMMA_SEP);
+			VAR_LOG(product_id);
+
+			std::getline(ss,order_id, DEF_COMMA_SEP);
+			VAR_LOG(order_id);
+
+			std::getline(ss,delivery_type, DEF_COMMA_SEP);
+			VAR_LOG(delivery_type);
+
+			std::getline(ss,price, DEF_COMMA_SEP);
+			VAR_LOG(price);
+
+			try{
+				ret = order->addOrder(product_id, order_id, std::stoi(delivery_type), static_cast<double>(std::stoi(price)));
+
+				if( ret == static_cast<int>(Retcode::ret_ng)){
+					ERROR_LOG("Cannot add item, invalid params");
+				}else { /* Do nothing */ }
+			}catch(const std::invalid_argument &ia){
+				ERROR_LOG("skipping item, invalid parameter");
+			}
+		}
+		MESSAGE_LOG("finished importing items from file...");
+
+	}else {/* Do nothing */}
 
 	while ( quitkey_pressed == false ){
 
