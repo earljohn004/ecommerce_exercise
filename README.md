@@ -49,10 +49,15 @@ All orders have to be printed on the standard output using a dedicated function.
 	};
 ```
 ## The solution
-	Possible to input from comma separated file. 
+1. Possible to load order list from comma separated file. 
+	```
 	bin/ECommerce_Exercise inputs.txt
-
+	```
 	Program will automatically load list of orders on startup
+2. Run program from Makefile
+	```
+	make run
+	```
 
 ## Information on other github repos used in current project
 - https://github.com/earljohn004/cppgenericmakefile		= folder structure and Makefile
